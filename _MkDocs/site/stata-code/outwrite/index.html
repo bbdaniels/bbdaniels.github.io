@@ -36,7 +36,7 @@
     
     
       
-        <title>Sumstats - Benjamin Daniels</title>
+        <title>outwrite - Benjamin Daniels</title>
       
     
     
@@ -72,7 +72,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#making-tables-of-summary-statistics-with-stata" tabindex="1" class="md-skip">
+      <a href="#outwrite" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -98,7 +98,7 @@
                 Benjamin Daniels
               </span>
               <span class="md-header-nav__topic">
-                Sumstats
+                outwrite
               </span>
             
           
@@ -236,18 +236,6 @@
           
           
 
-
-  <li class="md-nav__item">
-    <a href="../outwrite/" title="outwrite" class="md-nav__link">
-      outwrite
-    </a>
-  </li>
-
-        
-          
-          
-          
-
   
 
 
@@ -255,26 +243,51 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
+      
+    
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Sumstats
+        outwrite
       </label>
     
-    <a href="./" title="Sumstats" class="md-nav__link md-nav__link--active">
-      Sumstats
+    <a href="./" title="outwrite" class="md-nav__link md-nav__link--active">
+      outwrite
     </a>
     
       
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#making-tables-of-summary-statistics-with-stata" title="Making tables of summary statistics with Stata" class="md-nav__link">
-    Making tables of summary statistics with Stata
+  <a href="#writing-regression-tables-to-common-filetypes" title="Writing regression tables to common filetypes" class="md-nav__link">
+    Writing regression tables to common filetypes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" title="Syntax" class="md-nav__link">
+    Syntax
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" title="Example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acknowledgments" title="Acknowledgments" class="md-nav__link">
+    Acknowledgments
   </a>
   
 </li>
@@ -287,6 +300,18 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../sumstats/" title="Sumstats" class="md-nav__link">
+      Sumstats
+    </a>
   </li>
 
         
@@ -309,13 +334,36 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#making-tables-of-summary-statistics-with-stata" title="Making tables of summary statistics with Stata" class="md-nav__link">
-    Making tables of summary statistics with Stata
+  <a href="#writing-regression-tables-to-common-filetypes" title="Writing regression tables to common filetypes" class="md-nav__link">
+    Writing regression tables to common filetypes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" title="Syntax" class="md-nav__link">
+    Syntax
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" title="Example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acknowledgments" title="Acknowledgments" class="md-nav__link">
+    Acknowledgments
   </a>
   
 </li>
@@ -337,19 +385,64 @@
               
                 
                 
-                  <h1>Sumstats</h1>
-                
-                <h2 id="making-tables-of-summary-statistics-with-stata">Making tables of summary statistics with Stata</h2>
-<p>Making tables of summary statistics with Stata is now easy! Here's an example using <code>sumstats</code>:</p>
-<p><img alt="Making tables of summary statistics with Stata" src="/img/sumstats.png" /></p>
-<pre><code class="stata">sysuse auto.dta , clear
-sumstats  ///
-  (price mpg if foreign == 0) ///
-  (price displacement length if foreign == 1) ///
-  using &quot;test.xlsx&quot; , replace stats(mean sd)
+                <h1 id="outwrite">outwrite</h1>
+<h2 id="writing-regression-tables-to-common-filetypes">Writing regression tables to common filetypes</h2>
+<p><code>outwrite</code> reads multiple regressions saved with estimates store, consolidates them into a
+single table, and exports the results to a .xlsx, .xls, .csv, or .tex file:</p>
+<p><img alt="Writing regression tables to common filetypes." src="/img/outwrite.png" /></p>
+<p>Alternatively, as a programming command, it will accept a single matrix and print that; it
+will also look for matrix_STARS and affix that number of stars to each cell.</p>
+<h2 id="syntax">Syntax</h2>
+<pre><code class="stata">  outwrite estimates_1 estimates_2 [...]
+    using /path/to/output.[xlsx|xls|csv|tex] ,
+    [replace stats() drop(varlist)]
+    [tstat|pvalue] [format(format)]
+    [sheet(sheetname [,replace]) modify]
+    [rownames(&quot;list&quot; &quot;of&quot; &quot;names&quot;) colnames(&quot;list&quot; &quot;of&quot; &quot;names&quot;)]
+
+  ------------------------------------------------------------------------------------------
+    Options
+
+      replace         Allows outwrite to overwrite the output file.
+      stats()         Adds statistics from e() at the bottom of the table, such as N, r2,
+                        or scalars added by estadd.
+      drop(varlist)   Suppresses reporting of all variables in in varlist from the output.
+                        This can be a factor variable list.
+      tstat|pvalue    Reports T-statistics or P-values in regression table, instead of the
+                        default standard errors.
+      format(format)  Format the table values. By default this is %9.2f.
+      sheet()         Place results in a target sheet if using .xlsx format.
+      modify          Allows outwrite to modify the output file. Often required with
+                        sheet() to work as expected.
+      rownames()      Manually renames rows of output. By default, the rows are named to
+                        reflect the variables in the estimation command.
+      colnames()      Manually renames columns of output. By default, the columns are
+                        named to reflect the saved equation names.
+    --------------------------------------------------------------------------------------
+    Note: if used to export a matrix, stats(), drop(), and tstat|pvalue will not be
+    accepted.
 </code></pre>
 
-<p><code>sumstats</code> is coming soon to <a href="https://ideas.repec.org/">SSC</a> and is open for development on <a href="https://github.com/bbdaniels/sumstats">GitHub</a>. Submit bugs and feature requests <a href="https://github.com/bbdaniels/sumstats/issues">here</a>. If you like <code>sumstats</code>, be sure to visit my <a href="http://bbdaniels.github.io">homepage</a> and <a href="https://gist.github.com/bbdaniels/a3c9f9416f1d16d6f3c6e8cf371f1d89">Stata boilerplate code</a>.</p>
+<h2 id="example">Example</h2>
+<pre><code>  sysuse auto.dta, clear
+    reg price i.foreign##c.mpg
+    est sto reg1
+    reg price i.foreign##c.mpg##i.rep78
+    est sto reg2
+    estadd scalar h = 4
+    reg price i.rep78
+    est sto reg3
+    estadd scalar h = 2.5
+
+  outwrite reg1 reg2 reg3 using &quot;test.xlsx&quot; ///
+   , stats(N r2 h)  replace col(&quot;TEST&quot; &quot;(2)&quot;) drop(i.rep78) format(%9.3f)
+</code></pre>
+
+<h2 id="acknowledgments">Acknowledgments</h2>
+<p>While the concept of <code>outwrite</code> is original, we borrowed core functionality from <code>xml_tab</code> by
+Zurab Sajaia and Michael Lokshin, and many ideas from such programs as <code>estout</code> by Ben Jann,
+<code>outreg</code> by John Luke Gallup, <code>outreg2</code> by Roy Wada, <code>modltbl</code> by John H. Tyler, <code>mktab</code> by Nicholas Winter, <code>outtex</code> by Antoine Terracol, and <code>est2tex</code> by Marc Muendler.</p>
+<p><code>outwrite</code> is coming soon to SSC and is open for development on <a href="https://github.com/bbdaniels/outwrite">GitHub</a>. Submit bugs and feature requests <a href="https://github.com/bbdaniels/outwrite/issues">here</a>. If you like <code>outwrite</code>, be sure to visit my <a href="http://bbdaniels.github.io">homepage</a> and <a href="https://gist.github.com/bbdaniels/a3c9f9416f1d16d6f3c6e8cf371f1d89">Stata boilerplate code</a>.</p>
                 
                   
                 
@@ -370,7 +463,7 @@ sumstats  ///
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../outwrite/" title="outwrite" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../dta2kml/" title="Dta2kml" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -379,11 +472,25 @@ sumstats  ///
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                outwrite
+                Dta2kml
               </span>
             </div>
           </a>
         
+        
+          <a href="../sumstats/" title="Sumstats" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Sumstats
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
         
       </nav>
     </div>
