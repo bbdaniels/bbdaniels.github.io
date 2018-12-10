@@ -1,4 +1,4 @@
-## Making bar graphs with standard error bars in Stata
+# Making bar graphs with standard error bars
 
 Making graphs with confidence intervals in Stata is now easy! Here's an example using `betterbar`:
 

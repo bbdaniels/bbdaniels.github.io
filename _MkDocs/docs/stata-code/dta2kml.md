@@ -1,4 +1,4 @@
-## Outputting a KML file from a Stata dataset
+# Outputting a KML file from a dataset
 
 Making KML files in Stata is now easy! Here's an example using `dta2kml`:
 

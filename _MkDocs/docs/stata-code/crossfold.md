@@ -1,4 +1,4 @@
-# Performing k-fold cross-validation in Stata
+# Performing k-fold cross-validation
 
 ## Description
 
