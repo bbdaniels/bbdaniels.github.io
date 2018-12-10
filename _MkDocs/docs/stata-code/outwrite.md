@@ -1,4 +1,4 @@
-# Writing regression tables to common filetypes
+# Outputting regressions
 
 `outwrite` reads multiple regressions saved with estimates store, consolidates them into a
 single table, and exports the results to a .xlsx, .xls, .csv, or .tex file:

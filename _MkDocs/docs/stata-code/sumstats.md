@@ -1,4 +1,4 @@
-# Making tables of summary statistics
+# Summary statistics tables
 
 Making tables of summary statistics with Stata is now easy! Here's an example using `sumstats`:
 

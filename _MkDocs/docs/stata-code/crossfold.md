@@ -1,4 +1,4 @@
-# Performing k-fold cross-validation
+# K-fold cross-validation
 
 ## Description
 
