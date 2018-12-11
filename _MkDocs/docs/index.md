@@ -2,6 +2,8 @@
 
 ## Quality of Care Research
 
+<img src="/img/profile.jpg" alt="" style="width: 500px; float: left;"/>
+
 [Benjamin Daniels](https://scholar.google.com/citations?user=bExwzN4AAAAJ&hl=en) is a Research Analyst in the Development Research Group (Human Development and Impact Evaluation teams) at the World Bank. Benjamin’s research focuses on the delivery of high-quality primary health care in developing contexts. His work has highlighted the importance of direct measurement of health care provider knowledge, effort, and practice. To that end, he has supported some the largest research studies to date utilizing clinical vignettes, provider observation, and standardized patients. Benjamin works with the [QuTUB Project](https://www.qutubproject.org/).
 
 ## Research Reproducibility and Best Practices
