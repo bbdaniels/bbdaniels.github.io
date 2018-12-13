@@ -36,7 +36,7 @@
     
     
       
-        <title>Treatment effect graphs - Benjamin Daniels</title>
+        <title>Making QR codes - Benjamin Daniels</title>
       
     
     
@@ -71,7 +71,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#treatment-effect-graphs" tabindex="1" class="md-skip">
+      <a href="#making-qr-codes" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -97,7 +97,7 @@
                 Benjamin Daniels
               </span>
               <span class="md-header-nav__topic">
-                Treatment effect graphs
+                Making QR codes
               </span>
             
           
@@ -235,49 +235,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Treatment effect graphs
-      </label>
-    
-    <a href="./" title="Treatment effect graphs" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../forest/" title="Treatment effect graphs" class="md-nav__link">
       Treatment effect graphs
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#syntax" title="Syntax" class="md-nav__link">
-    Syntax
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -309,11 +271,20 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../txt2qr/" title="Making QR codes" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="Making QR codes" class="md-nav__link md-nav__link--active">
       Making QR codes
     </a>
+    
   </li>
 
         
@@ -339,22 +310,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#syntax" title="Syntax" class="md-nav__link">
-    Syntax
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -366,52 +321,16 @@
               
                 
                 
-                <h1 id="treatment-effect-graphs">Treatment effect graphs</h1>
-<p>Making visualization of treatment effect on multiple outcomes with Stata is now easy! Here's an example using <code>forest</code>:</p>
-<p><img alt="Making visualization of treatment effect on multiple outcomes with Stata" src="/img/forest.png" /></p>
-<pre><code class="stata">global tw_opts ///
-    title(, justification(left) color(black) span pos(11)) ///
-    graphregion(color(white) lc(white) lw(med)) bgcolor(white) ///
-    ylab(,angle(0) nogrid) xtit(,placement(left) justification(left)) ///
-    yscale(noline) xscale(noline) legend(region(lc(none) fc(none)))
-
-sysuse auto.dta , clear
-forest reg mpg headroom trunk = displacement , graph($tw_opts)
+                <h1 id="making-qr-codes">Making QR codes</h1>
+<p>Making tables of summary statistics with Stata is now easy! Here's an example using <code>sumstats</code>:</p>
+<pre><code class="stata">txt2qr this is a test using &quot;test.png&quot;, replace
 </code></pre>
 
-<p><code>forest</code> reports results from multiple regressions on a single independent variable as a
-modified "forest" chart.  This chart shows the effect of a single treatment variable of
-interest on a range of independent variables.  It can display raw coefficients,
-standardized effect sizes (Cohen's <em>d</em>), or odds ratios (from logistic regressions).</p>
-<h2 id="syntax">Syntax</h2>
-<pre><code class="stata">  forest estimator depvars = treatment
-    [if] [in] , [weight(weight)] [controls(varlist)]
-    [graphopts(twoway_options)] [or|d]
-    [bonferroni] [est_options]
-</code></pre>
-
-<pre><code>    Syntax            Description
-    -------------------------------------------------------------------------------------
-      estimator       Indicates the estimation command to be utilized.
-      depvars         List the left-hand-side variables.
-      treatment       List the independent variable of interest.
-
-      or|d            Request effect sizes as odds ratios (by exponentiating regression
-                        coefficients where possible) or in terms of Cohen's d (by
-                        standardizing the dependent variables). (Choose only one.)
-      bonferroni      Request confidence intervals calculated with Bonferroni correction
-                        for simultaneous comparisons.  This is calculated by adjusting
-                        the significance level to (100-5/(number of regressions)).
-
-      weight()        Specify weights.
-      controls()      Specify controls.
-      graphopts()     Set any desired options for the graph.
-
-      est_options     Specify any options needed for the estimator.
-    -------------------------------------------------------------------------------------
-</code></pre>
-
-<p><code>forest</code> is coming soon to <a href="https://ideas.repec.org/">SSC</a> and is open for development on <a href="https://github.com/bbdaniels/forest">GitHub</a>. Submit bugs and feature requests <a href="https://github.com/bbdaniels/forest/issues">here</a>. If you like <code>forest</code>, be sure to visit my <a href="http://bbdaniels.github.io">homepage</a> and <a href="https://gist.github.com/bbdaniels/a3c9f9416f1d16d6f3c6e8cf371f1d89">Stata boilerplate code</a>.</p>
+<p><img alt="Making tables of summary statistics with Stata" src="/img/txt2qr.png" /></p>
+<p>txt2qr saves a QR code containing text to the location specified in using. The file
+extension .png is recommended. Spaces and special characters are not currently supported in
+text. Internet connection is required.</p>
+<p><code>txt2qr</code> is coming soon to <a href="https://ideas.repec.org/">SSC</a> and is open for development on <a href="https://github.com/bbdaniels/txt2qr">GitHub</a>. Submit bugs and feature requests <a href="https://github.com/bbdaniels/txt2qr/issues">here</a>. If you like <code>txt2qr</code>, be sure to visit my <a href="http://bbdaniels.github.io">homepage</a> and <a href="https://gist.github.com/bbdaniels/a3c9f9416f1d16d6f3c6e8cf371f1d89">Stata boilerplate code</a>.</p>
                 
                   
                 
@@ -432,7 +351,7 @@ standardized effect sizes (Cohen's <em>d</em>), or odds ratios (from logistic re
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../dta2kml/" title="Writing a KML file" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../sumstats/" title="Summary statistics tables" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -441,25 +360,11 @@ standardized effect sizes (Cohen's <em>d</em>), or odds ratios (from logistic re
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Writing a KML file
+                Summary statistics tables
               </span>
             </div>
           </a>
         
-        
-          <a href="../outwrite/" title="Outputting regressions" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Outputting regressions
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
         
       </nav>
     </div>
