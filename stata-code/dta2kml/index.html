@@ -42,6 +42,12 @@
     
       <link rel="stylesheet" href="../../assets/stylesheets/application.451f80e5.css">
       
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#009688">
       
     
     
@@ -50,8 +56,8 @@
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
-        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,400i,700|Fira+Mono">
+        <style>body,input{font-family:"Fira Sans","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono","Courier New",Courier,monospace}</style>
       
     
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
@@ -59,7 +65,9 @@
     
   </head>
   
-    <body dir="ltr">
+    
+    
+    <body dir="ltr" data-md-color-primary="teal" data-md-color-accent="teal">
   
     <svg class="md-svg">
       <defs>
@@ -82,7 +90,7 @@
       <div class="md-flex__cell md-flex__cell--shrink">
         <a href="../.." title="Benjamin Daniels" class="md-header-nav__button md-logo">
           
-            <i class="md-icon"></i>
+            <i class="md-icon">memory</i>
           
         </a>
       </div>
@@ -154,7 +162,7 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <a href="../.." title="Benjamin Daniels" class="md-nav__button md-logo">
       
-        <i class="md-icon"></i>
+        <i class="md-icon">memory</i>
       
     </a>
     Benjamin Daniels
@@ -393,18 +401,51 @@
                 <h1 id="writing-a-kml-file">Writing a KML file</h1>
 <p>Making KML files in Stata is now easy! Here's an example using <code>dta2kml</code>:</p>
 <p><img alt="Outputting a KML file from a Stata dataset" src="/img/dta2kml.jpg" /></p>
-<pre><code class="stata">ssc install dta2kml
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">ssc</span> install dta2kml
 
-clear
-    set obs 100
-    gen lat = rnormal() +38
-    gen lon = rnormal() -77
+<span class="k">clear</span>
+<span class="k">    set</span> obs <span class="m">100</span>
+<span class="k">    gen</span> lat = <span class="nf">rnormal(</span>) +<span class="m">38</span>
+<span class="k">    gen</span> lon = <span class="nf">rnormal(</span>) -<span class="m">77</span>
 
-dta2kml using &quot;demo.kml&quot; , lat(lat) lon(lon) replace
-</code></pre>
+dta2kml using <span class="s">&quot;demo.kml&quot;</span> , lat(lat) lon(lon)<span class="k"> replace</span>
+</pre></div>
+</td></tr></table>
 
 <h2 id="syntax">Syntax</h2>
-<pre><code class="stata">dta2kml using filename [if] [in], [replace]
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>dta2kml using filename [if] [in], [replace]
         latitude(varname) longitude(varname) [altitude(varname)]
         [lines(group_var index_var)] [point_options]
 
@@ -413,10 +454,10 @@ dta2kml using &quot;demo.kml&quot; , lat(lat) lon(lon) replace
     ------------------------------------------------------------------------
     Line Options
 
-    lines()               Specify the grouping variable (unique for each
-                            line) and the index variable, ranging from 1 to
-                            n consecutively for each element. If lines() is
-                            specified only this type of data can be used.
+    lines()               Specify the grouping variable (unique<span class="k"> for</span> each
+<span class="k">                            line</span>) and the index variable, ranging from <span class="m">1</span> to
+<span class="k">                            n</span> consecutively<span class="k"> for</span> each element. If lines() is
+                            specified only this<span class="k"> type</span> of data can be used.
 
     Point Options
 
@@ -424,13 +465,14 @@ dta2kml using &quot;demo.kml&quot; , lat(lat) lon(lon) replace
     names()               Indicates a variable containing placemark names.
     icons()               Indicates a variable containing the full URLs of
                             the desired icons from the libraries located at
-                            http://kml4earth.appspot.com/icons.html. If this
-                            option is not specified, all placemarks display
+                            http:<span class="c1">//kml4earth.appspot.com/icons.html. If this</span>
+                            option is not specified, all placemarks<span class="k"> display</span>
                             the default icon.
     descriptions()        Indicates a variable containing descriptions to
                             attach to the placemarks.
     ------------------------------------------------------------------------
-</code></pre>
+</pre></div>
+</td></tr></table>
 
 <p><code>dta2kml</code> is available on <a href="https://ideas.repec.org/c/boc/bocode/s457748.html">SSC</a> and is open for development on <a href="https://github.com/bbdaniels/dta2kml">GitHub</a>. Submit bugs and feature requests <a href="https://github.com/bbdaniels/dta2kml/issues">here</a>. If you like <code>dta2kml</code>, be sure to visit my <a href="http://bbdaniels.github.io">homepage</a> and <a href="https://gist.github.com/bbdaniels/a3c9f9416f1d16d6f3c6e8cf371f1d89">Stata boilerplate code</a>.</p>
                 

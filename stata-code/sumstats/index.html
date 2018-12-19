@@ -42,6 +42,12 @@
     
       <link rel="stylesheet" href="../../assets/stylesheets/application.451f80e5.css">
       
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#009688">
       
     
     
@@ -50,8 +56,8 @@
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
-        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,400i,700|Fira+Mono">
+        <style>body,input{font-family:"Fira Sans","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono","Courier New",Courier,monospace}</style>
       
     
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
@@ -59,7 +65,9 @@
     
   </head>
   
-    <body dir="ltr">
+    
+    
+    <body dir="ltr" data-md-color-primary="teal" data-md-color-accent="teal">
   
     <svg class="md-svg">
       <defs>
@@ -82,7 +90,7 @@
       <div class="md-flex__cell md-flex__cell--shrink">
         <a href="../.." title="Benjamin Daniels" class="md-header-nav__button md-logo">
           
-            <i class="md-icon"></i>
+            <i class="md-icon">memory</i>
           
         </a>
       </div>
@@ -154,7 +162,7 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <a href="../.." title="Benjamin Daniels" class="md-nav__button md-logo">
       
-        <i class="md-icon"></i>
+        <i class="md-icon">memory</i>
       
     </a>
     Benjamin Daniels
@@ -348,12 +356,17 @@
                 <h1 id="summary-statistics-tables">Summary statistics tables</h1>
 <p>Making tables of summary statistics with Stata is now easy! Here's an example using <code>sumstats</code>:</p>
 <p><img alt="Making tables of summary statistics with Stata" src="/img/sumstats.png" /></p>
-<pre><code class="stata">sysuse auto.dta , clear
-sumstats  ///
-  (price mpg if foreign == 0) ///
-  (price displacement length if foreign == 1) ///
-  using &quot;test.xlsx&quot; , replace stats(mean sd)
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">sysuse</span> auto<span class="m">.</span>dta ,<span class="k"> clear</span>
+sumstats  <span class="c1">///</span>
+  (price mpg<span class="k"> if</span> foreign == <span class="m">0</span>) <span class="c1">///</span>
+  (price displacement length<span class="k"> if</span> foreign == <span class="m">1</span>) <span class="c1">///</span>
+  using <span class="s">&quot;test.xlsx&quot;</span> ,<span class="k"> replace</span> stats(mean sd)
+</pre></div>
+</td></tr></table>
 
 <p><code>sumstats</code> is coming soon to <a href="https://ideas.repec.org/">SSC</a> and is open for development on <a href="https://github.com/bbdaniels/sumstats">GitHub</a>. Submit bugs and feature requests <a href="https://github.com/bbdaniels/sumstats/issues">here</a>. If you like <code>sumstats</code>, be sure to visit my <a href="http://bbdaniels.github.io">homepage</a> and <a href="https://gist.github.com/bbdaniels/a3c9f9416f1d16d6f3c6e8cf371f1d89">Stata boilerplate code</a>.</p>
                 

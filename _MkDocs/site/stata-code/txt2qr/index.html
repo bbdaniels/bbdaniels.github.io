@@ -42,6 +42,12 @@
     
       <link rel="stylesheet" href="../../assets/stylesheets/application.451f80e5.css">
       
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#009688">
       
     
     
@@ -50,8 +56,8 @@
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
-        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,400i,700|Fira+Mono">
+        <style>body,input{font-family:"Fira Sans","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono","Courier New",Courier,monospace}</style>
       
     
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
@@ -59,7 +65,9 @@
     
   </head>
   
-    <body dir="ltr">
+    
+    
+    <body dir="ltr" data-md-color-primary="teal" data-md-color-accent="teal">
   
     <svg class="md-svg">
       <defs>
@@ -82,7 +90,7 @@
       <div class="md-flex__cell md-flex__cell--shrink">
         <a href="../.." title="Benjamin Daniels" class="md-header-nav__button md-logo">
           
-            <i class="md-icon"></i>
+            <i class="md-icon">memory</i>
           
         </a>
       </div>
@@ -154,7 +162,7 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <a href="../.." title="Benjamin Daniels" class="md-nav__button md-logo">
       
-        <i class="md-icon"></i>
+        <i class="md-icon">memory</i>
       
     </a>
     Benjamin Daniels
@@ -347,8 +355,9 @@
                 
                 <h1 id="making-qr-codes">Making QR codes</h1>
 <p>Making QR codes with Stata is now easy! Here's an example using <code>txt2qr</code>:</p>
-<pre><code class="stata">txt2qr this is a test using &quot;test.png&quot;, replace
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>txt2qr this is a<span class="k"> test</span> using <span class="s">&quot;test.png&quot;</span>,<span class="k"> replace</span>
+</pre></div>
+</td></tr></table>
 
 <p><img alt="Making QR codes with Stata" src="/img/txt2qr.png" /></p>
 <p>txt2qr saves a QR code containing text to the location specified in using. The file

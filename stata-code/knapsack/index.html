@@ -42,6 +42,12 @@
     
       <link rel="stylesheet" href="../../assets/stylesheets/application.451f80e5.css">
       
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#009688">
       
     
     
@@ -50,8 +56,8 @@
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
-        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,400i,700|Fira+Mono">
+        <style>body,input{font-family:"Fira Sans","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono","Courier New",Courier,monospace}</style>
       
     
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
@@ -59,7 +65,9 @@
     
   </head>
   
-    <body dir="ltr">
+    
+    
+    <body dir="ltr" data-md-color-primary="teal" data-md-color-accent="teal">
   
     <svg class="md-svg">
       <defs>
@@ -82,7 +90,7 @@
       <div class="md-flex__cell md-flex__cell--shrink">
         <a href="../.." title="Benjamin Daniels" class="md-header-nav__button md-logo">
           
-            <i class="md-icon"></i>
+            <i class="md-icon">memory</i>
           
         </a>
       </div>
@@ -154,7 +162,7 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <a href="../.." title="Benjamin Daniels" class="md-nav__button md-logo">
       
-        <i class="md-icon"></i>
+        <i class="md-icon">memory</i>
       
     </a>
     Benjamin Daniels
@@ -347,27 +355,47 @@
                 
                 <h1 id="solving-knapsack-problems">Solving knapsack problems</h1>
 <p>Stata can now solve constrained optimization problems of the "knapsack" variety! Given a budget constraint and a dataset of items with prices and values, <code>knapsack</code> will calculate the most valuable obtainable combination under the given budget, and returns those items and their total value. Here's an example:</p>
-<pre><code class="stata">. sysuse auto.dta, clear
-(1978 Automobile Data)
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>.<span class="k"> sysuse</span> auto<span class="m">.</span>dta,<span class="k"> clear</span>
+(<span class="m">1978</span> Automobile Data)
 
-. keep mpg price
-. rename (mpg price)(cost value)
+.<span class="k"> keep</span> mpg price
+.<span class="k"> rename</span> (mpg price)(cost value)
 
-. knapsack 500, p(cost) v(value) gen(chosen)
-(74 missing values generated)
-Maximum Total Price = 253853
+. knapsack <span class="m">500</span>, p(cost) v(value)<span class="k"> gen</span>(chosen)
+(<span class="m">74</span> missing values generated)
+Maximum Total Price = <span class="m">253853</span>
 
-. di &quot;`r(max)'&quot;
-253853
+.<span class="k"> di</span> <span class="s">&quot;</span><span class="nv">`</span><span class="err">r(max)</span><span class="nv">&#39;</span><span class="s">&quot;</span>
+<span class="m">253853</span>
 
-. table chosen , c(sum cost sum value)
+.<span class="k"> table</span> chosen , <span class="nf">c(</span>sum cost<span class="k"> sum</span> value)
 ----------------------------------
-   chosen |  sum(cost)  sum(value)
+   chosen | <span class="k"> sum</span>(cost) <span class="k"> sum</span>(value)
 ----------+-----------------------
-        0 |       1076      202376
-        1 |        500      253853
+        <span class="m">0</span> |       <span class="m">1076</span>      <span class="m">202376</span>
+        <span class="m">1</span> |        <span class="m">500</span>      <span class="m">253853</span>
 ----------------------------------
-</code></pre>
+</pre></div>
+</td></tr></table>
 
 <p><code>knapsack</code> is coming soon to <a href="https://ideas.repec.org/">SSC</a> and is open for development on <a href="https://github.com/bbdaniels/knapsack">GitHub</a>. Submit bugs and feature requests <a href="https://github.com/bbdaniels/knapsack/issues">here</a>. If you like <code>knapsack</code>, be sure to visit my <a href="http://bbdaniels.github.io">homepage</a> and <a href="https://gist.github.com/bbdaniels/a3c9f9416f1d16d6f3c6e8cf371f1d89">Stata boilerplate code</a>.</p>
                 

@@ -42,6 +42,12 @@
     
       <link rel="stylesheet" href="../../assets/stylesheets/application.451f80e5.css">
       
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#009688">
       
     
     
@@ -50,8 +56,8 @@
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
-        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,400i,700|Fira+Mono">
+        <style>body,input{font-family:"Fira Sans","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono","Courier New",Courier,monospace}</style>
       
     
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
@@ -59,7 +65,9 @@
     
   </head>
   
-    <body dir="ltr">
+    
+    
+    <body dir="ltr" data-md-color-primary="teal" data-md-color-accent="teal">
   
     <svg class="md-svg">
       <defs>
@@ -82,7 +90,7 @@
       <div class="md-flex__cell md-flex__cell--shrink">
         <a href="../.." title="Benjamin Daniels" class="md-header-nav__button md-logo">
           
-            <i class="md-icon"></i>
+            <i class="md-icon">memory</i>
           
         </a>
       </div>
@@ -154,7 +162,7 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <a href="../.." title="Benjamin Daniels" class="md-nav__button md-logo">
       
-        <i class="md-icon"></i>
+        <i class="md-icon">memory</i>
       
     </a>
     Benjamin Daniels
@@ -425,38 +433,77 @@ single table, and exports the results to a .xlsx, .xls, .csv, or .tex file:</p>
 <p>Alternatively, as a programming command, it will accept a single matrix and print that; it
 will also look for matrix_STARS and affix that number of stars to each cell.</p>
 <h2 id="syntax">Syntax</h2>
-<pre><code class="stata">  outwrite estimates_1 estimates_2 [...]
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>  outwrite estimates_1 estimates_2 [...]
     using /path/to/output.[xlsx|xls|csv|tex] ,
-    [replace stats() drop(varlist)]
+    [replace stats()<span class="k"> drop</span>(varlist)]
     [tstat|pvalue] [format(format)]
     [sheet(sheetname [,replace]) modify]
-    [rownames(&quot;list&quot; &quot;of&quot; &quot;names&quot;) colnames(&quot;list&quot; &quot;of&quot; &quot;names&quot;)]
+    [rownames(<span class="s">&quot;list&quot;</span> <span class="s">&quot;of&quot;</span> <span class="s">&quot;names&quot;</span>) colnames(<span class="s">&quot;list&quot;</span> <span class="s">&quot;of&quot;</span> <span class="s">&quot;names&quot;</span>)]
 
   ------------------------------------------------------------------------------------------
     Options
 
-      replace         Allows outwrite to overwrite the output file.
-      stats()         Adds statistics from e() at the bottom of the table, such as N, r2,
-                        or scalars added by estadd.
-      drop(varlist)   Suppresses reporting of all variables in in varlist from the output.
-                        This can be a factor variable list.
-      tstat|pvalue    Reports T-statistics or P-values in regression table, instead of the
+<span class="k">      replace</span>         Allows outwrite to overwrite the output<span class="k"> file</span>.
+      stats()         Adds statistics from<span class="k"> e</span>() at the bottom of the<span class="k"> table</span>, such<span class="k"> as</span> N, r2,
+                        or scalars added<span class="k"> by</span> estadd.
+<span class="k">      drop</span>(varlist)   Suppresses reporting of all variables<span class="k"> in in varlist</span> from the output.
+                        This can be a<span class="k"> factor</span> variable<span class="k"> list</span>.
+      tstat|pvalue    Reports T-statistics or P-values<span class="k"> in</span> regression<span class="k"> table</span>, instead of the
                         default standard errors.
-      format(format)  Format the table values. By default this is %9.2f.
-      sheet()         Place results in a target sheet if using .xlsx format.
-      modify          Allows outwrite to modify the output file. Often required with
-                        sheet() to work as expected.
+<span class="k">      format</span>(format)  Format the<span class="k"> table</span> values. By default this is %<span class="m">9.</span>2f.
+      sheet()         Place results<span class="k"> in</span> a target sheet<span class="k"> if</span> using .xlsx<span class="k"> format</span>.
+      modify          Allows outwrite to modify the output<span class="k"> file</span>. Often required with
+                        sheet() to work<span class="k"> as</span> expected.
       rownames()      Manually renames rows of output. By default, the rows are named to
-                        reflect the variables in the estimation command.
+                        reflect the variables<span class="k"> in</span> the estimation command.
       colnames()      Manually renames columns of output. By default, the columns are
                         named to reflect the saved equation names.
     --------------------------------------------------------------------------------------
-    Note: if used to export a matrix, stats(), drop(), and tstat|pvalue will not be
+    Note:<span class="k"> if</span> used to export a<span class="k"> matrix</span>, stats(),<span class="k"> drop</span>(), and tstat|pvalue will not be
     accepted.
-</code></pre>
+</pre></div>
+</td></tr></table>
 
 <h2 id="example">Example</h2>
-<pre><code>  sysuse auto.dta, clear
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>  sysuse auto.dta, clear
     reg price i.foreign##c.mpg
     est sto reg1
     reg price i.foreign##c.mpg##i.rep78
@@ -468,7 +515,8 @@ will also look for matrix_STARS and affix that number of stars to each cell.</p>
 
   outwrite reg1 reg2 reg3 using &quot;test.xlsx&quot; ///
    , stats(N r2 h)  replace col(&quot;TEST&quot; &quot;(2)&quot;) drop(i.rep78) format(%9.3f)
-</code></pre>
+</pre></div>
+</td></tr></table>
 
 <h2 id="acknowledgments">Acknowledgments</h2>
 <p>While the concept of <code>outwrite</code> is original, we borrowed core functionality from <code>xml_tab</code> by
