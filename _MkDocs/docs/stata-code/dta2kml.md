@@ -1,4 +1,4 @@
-# Writing a KML file
+# KML files
 
 Making KML files in Stata is now easy! Here's an example using `dta2kml`:
 

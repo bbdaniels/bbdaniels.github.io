@@ -1,4 +1,4 @@
-# Making QR codes
+# QR codes
 
 Making QR codes with Stata is now easy! Here's an example using `txt2qr`:
 

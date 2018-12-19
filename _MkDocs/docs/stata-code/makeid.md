@@ -1,4 +1,4 @@
-# Creating unique IDs
+# Unique IDs
 
 Making best-practice unique IDs in Stata is now easy! Here's an example using `makeid`:
 

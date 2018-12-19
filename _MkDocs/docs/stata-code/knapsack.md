@@ -1,4 +1,4 @@
-# Solving knapsack problems
+# Knapsack solver
 
 Stata can now solve constrained optimization problems of the "knapsack" variety! Given a budget constraint and a dataset of items with prices and values, `knapsack` will calculate the most valuable obtainable combination under the given budget, and returns those items and their total value. Here's an example:
 
