@@ -1,12 +1,12 @@
 # Making QR codes
 
-Making tables of summary statistics with Stata is now easy! Here's an example using `sumstats`:
+Making QR codes with Stata is now easy! Here's an example using `txt2qr`:
 
 ```stata
 txt2qr this is a test using "test.png", replace
 ```
 
-![Making tables of summary statistics with Stata](/img/txt2qr.png)
+![Making QR codes with Stata](/img/txt2qr.png)
 
 txt2qr saves a QR code containing text to the location specified in using. The file
 extension .png is recommended. Spaces and special characters are not currently supported in

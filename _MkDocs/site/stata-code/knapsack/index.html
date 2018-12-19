@@ -36,7 +36,7 @@
     
     
       
-        <title>Bar graphs with CIs - Benjamin Daniels</title>
+        <title>Solving knapsack problems - Benjamin Daniels</title>
       
     
     
@@ -71,7 +71,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#bar-graphs-with-cis" tabindex="1" class="md-skip">
+      <a href="#solving-knapsack-problems" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -97,7 +97,7 @@
                 Benjamin Daniels
               </span>
               <span class="md-header-nav__topic">
-                Bar graphs with CIs
+                Solving knapsack problems
               </span>
             
           
@@ -199,20 +199,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="./" title="Bar graphs with CIs" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../betterbar/" title="Bar graphs with CIs" class="md-nav__link">
       Bar graphs with CIs
     </a>
-    
   </li>
 
         
@@ -256,11 +247,20 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../knapsack/" title="Solving knapsack problems" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="Solving knapsack problems" class="md-nav__link md-nav__link--active">
       Solving knapsack problems
     </a>
+    
   </li>
 
         
@@ -333,23 +333,31 @@
               
                 
                 
-                <h1 id="bar-graphs-with-cis">Bar graphs with CIs</h1>
-<p>Making graphs with confidence intervals in Stata is now easy! Here's an example using <code>betterbar</code>:</p>
-<p><img alt="Graphs with confidence intervals in Stata" src="/img/betterbar.png" /></p>
-<pre><code class="stata">ssc install betterbar
+                <h1 id="solving-knapsack-problems">Solving knapsack problems</h1>
+<p>Stata can now solve constrained optimization problems of the "knapsack" variety! Given a budget constraint and a dataset of items with prices and values, <code>knapsack</code> will calculate the most valuable obtainable combination under the given budget, and returns those items and their total value. Here's an example:</p>
+<pre><code class="stata">. sysuse auto.dta, clear
+(1978 Automobile Data)
 
-global tw_opts ///
-    title(, justification(left) color(black) span pos(11)) ///
-    graphregion(color(white) lc(white) lw(med)) bgcolor(white) ///
-    ylab(,angle(0) nogrid) xtit(,placement(left) justification(left)) ///
-    yscale(noline) xscale(noline) legend(region(lc(none) fc(none)))
+. keep mpg price
+. rename (mpg price)(cost value)
 
-sysuse auto.dta , clear
+. knapsack 500, p(cost) v(value) gen(chosen)
+(74 missing values generated)
+Maximum Total Price = 253853
 
-betterbarci headroom trunk mpg , over(foreign) ${tw_opts}
+. di &quot;`r(max)'&quot;
+253853
+
+. table chosen , c(sum cost sum value)
+----------------------------------
+   chosen |  sum(cost)  sum(value)
+----------+-----------------------
+        0 |       1076      202376
+        1 |        500      253853
+----------------------------------
 </code></pre>
 
-<p><code>betterbar</code> is available on <a href="https://ideas.repec.org/c/boc/bocode/s458560.html">SSC</a> and is open for development on <a href="https://github.com/bbdaniels/betterbar">GitHub</a>. Submit bugs and feature requests <a href="https://github.com/bbdaniels/betterbar/issues">here</a>. If you like <code>betterbar</code>, be sure to visit my <a href="http://bbdaniels.github.io">homepage</a> and <a href="https://gist.github.com/bbdaniels/a3c9f9416f1d16d6f3c6e8cf371f1d89">Stata boilerplate code</a>.</p>
+<p><code>knapsack</code> is coming soon to <a href="https://ideas.repec.org/">SSC</a> and is open for development on <a href="https://github.com/bbdaniels/knapsack">GitHub</a>. Submit bugs and feature requests <a href="https://github.com/bbdaniels/knapsack/issues">here</a>. If you like <code>knapsack</code>, be sure to visit my <a href="http://bbdaniels.github.io">homepage</a> and <a href="https://gist.github.com/bbdaniels/a3c9f9416f1d16d6f3c6e8cf371f1d89">Stata boilerplate code</a>.</p>
                 
                   
                 
@@ -370,7 +378,7 @@ betterbarci headroom trunk mpg , over(foreign) ${tw_opts}
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../.." title="About Me" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../forest/" title="Treatment effect graphs" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -379,19 +387,19 @@ betterbarci headroom trunk mpg , over(foreign) ${tw_opts}
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                About Me
+                Treatment effect graphs
               </span>
             </div>
           </a>
         
         
-          <a href="../crossfold/" title="K-fold cross-validation" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../outwrite/" title="Outputting regressions" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                K-fold cross-validation
+                Outputting regressions
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
