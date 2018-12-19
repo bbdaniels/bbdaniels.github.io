@@ -36,7 +36,7 @@
     
     
       
-        <title>Summary statistics tables - Benjamin Daniels</title>
+        <title>Creating flow charts - Benjamin Daniels</title>
       
     
     
@@ -71,7 +71,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#summary-statistics-tables" tabindex="1" class="md-skip">
+      <a href="#creating-flow-charts" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -97,7 +97,7 @@
                 Benjamin Daniels
               </span>
               <span class="md-header-nav__topic">
-                Summary statistics tables
+                Creating flow charts
               </span>
             
           
@@ -235,11 +235,20 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../flowchart/" title="Creating flow charts" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="Creating flow charts" class="md-nav__link md-nav__link--active">
       Creating flow charts
     </a>
+    
   </li>
 
         
@@ -283,20 +292,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="./" title="Summary statistics tables" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../sumstats/" title="Summary statistics tables" class="md-nav__link">
       Summary statistics tables
     </a>
-    
   </li>
 
         
@@ -345,17 +345,13 @@
               
                 
                 
-                <h1 id="summary-statistics-tables">Summary statistics tables</h1>
-<p>Making tables of summary statistics with Stata is now easy! Here's an example using <code>sumstats</code>:</p>
-<p><img alt="Making tables of summary statistics with Stata" src="/img/sumstats.png" /></p>
-<pre><code class="stata">sysuse auto.dta , clear
-sumstats  ///
-  (price mpg if foreign == 0) ///
-  (price displacement length if foreign == 1) ///
-  using &quot;test.xlsx&quot; , replace stats(mean sd)
+                <h1 id="creating-flow-charts">Creating flow charts</h1>
+<p>Creating flow charts in Stata is now easy! Given an Excel spreadsheet with columns A, B, C, and D titled “logic”, “var”, “stat” and “value”, respectively, <code>flowchart</code> replaces the “value” column with the requested statistic for the observations in the dataset that fit the condition expressed in “logic”. This allows for the creation of dynamically updating custom tables and flowcharts. Here's an example:</p>
+<p><img alt="Making QR codes with Stata" src="/img/flowchart.png" /></p>
+<pre><code class="stata">flowchart using &quot;flowchart.xlsx&quot;
 </code></pre>
 
-<p><code>sumstats</code> is coming soon to <a href="https://ideas.repec.org/">SSC</a> and is open for development on <a href="https://github.com/bbdaniels/sumstats">GitHub</a>. Submit bugs and feature requests <a href="https://github.com/bbdaniels/sumstats/issues">here</a>. If you like <code>sumstats</code>, be sure to visit my <a href="http://bbdaniels.github.io">homepage</a> and <a href="https://gist.github.com/bbdaniels/a3c9f9416f1d16d6f3c6e8cf371f1d89">Stata boilerplate code</a>.</p>
+<p><code>knapsack</code> is coming soon to <a href="https://ideas.repec.org/">SSC</a> and is open for development on <a href="https://github.com/bbdaniels/flowchart">GitHub</a>. Submit bugs and feature requests <a href="https://github.com/bbdaniels/flowchart/issues">here</a>. If you like <code>flowchart</code>, be sure to visit my <a href="http://bbdaniels.github.io">homepage</a> and <a href="https://gist.github.com/bbdaniels/a3c9f9416f1d16d6f3c6e8cf371f1d89">Stata boilerplate code</a>.</p>
                 
                   
                 
@@ -376,7 +372,7 @@ sumstats  ///
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../outwrite/" title="Outputting regressions" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../dta2kml/" title="Writing a KML file" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -385,19 +381,19 @@ sumstats  ///
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Outputting regressions
+                Writing a KML file
               </span>
             </div>
           </a>
         
         
-          <a href="../txt2qr/" title="Making QR codes" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../forest/" title="Treatment effect graphs" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Making QR codes
+                Treatment effect graphs
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
