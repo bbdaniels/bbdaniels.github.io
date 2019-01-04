@@ -1,9 +1,24 @@
 # Regression tables
 
-`outwrite` reads multiple regressions saved with estimates store, consolidates them into a
+`outwrite` reads multiple regressions saved with `estimates store`, consolidates them into a
 single table, and exports the results to a .xlsx, .xls, .csv, or .tex file:
 
-![Writing regression tables to common filetypes.](/img/outwrite.png)
+```
+  sysuse auto.dta, clear
+    reg price i.foreign##c.mpg
+    est sto reg1
+    reg price i.foreign##c.mpg##i.rep78
+    est sto reg2
+    estadd scalar h = 4
+    reg price i.rep78
+    est sto reg3
+    estadd scalar h = 2.5
+
+  outwrite reg1 reg2 reg3 using "test.xlsx" ///
+   , stats(N r2 h)  replace col("TEST" "(2)") drop(i.rep78) format(%9.3f)
+```
+
+![Writing regression tables to common filetypes in Stata.](/img/outwrite.png)
 
 Alternatively, as a programming command, it will accept a single matrix and print that; it
 will also look for matrix_STARS and affix that number of stars to each cell.
@@ -39,23 +54,6 @@ will also look for matrix_STARS and affix that number of stars to each cell.
     --------------------------------------------------------------------------------------
     Note: if used to export a matrix, stats(), drop(), and tstat|pvalue will not be
     accepted.
-```
-
-## Example
-
-```
-  sysuse auto.dta, clear
-    reg price i.foreign##c.mpg
-    est sto reg1
-    reg price i.foreign##c.mpg##i.rep78
-    est sto reg2
-    estadd scalar h = 4
-    reg price i.rep78
-    est sto reg3
-    estadd scalar h = 2.5
-
-  outwrite reg1 reg2 reg3 using "test.xlsx" ///
-   , stats(N r2 h)  replace col("TEST" "(2)") drop(i.rep78) format(%9.3f)
 ```
 
 ## Acknowledgments
