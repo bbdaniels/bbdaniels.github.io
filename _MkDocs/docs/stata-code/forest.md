@@ -1,8 +1,8 @@
 # Treatment effect graphs
 
-Making visualization of treatment effect on multiple outcomes with Stata is now easy! Here's an example using `forest`:
+Visualizing treatment effects on multiple outcomes with Stata is now easy! Here's an example using `forest`:
 
-![Making visualization of treatment effect on multiple outcomes with Stata](/img/forest.png)
+![Visualizing treatment effects on multiple outcomes with Stata](/img/forest.png)
 
 ```stata
 global tw_opts ///
@@ -15,10 +15,10 @@ sysuse auto.dta , clear
 forest reg mpg headroom trunk = displacement , graph($tw_opts)
 ```
 
-`forest` reports results from multiple regressions on a single independent variable as a
-modified "forest" chart.  This chart shows the effect of a single treatment variable of
-interest on a range of independent variables.  It can display raw coefficients,
-standardized effect sizes (Cohen's *d*), or odds ratios (from logistic regressions).
+`forest` visualizes results from multiple regressions on a single independent variable.  The resulting "forest" chart
+shows the effect of a single treatment variable of interest on a set of independent variables.  It can display raw
+coefficients, standardized effect sizes (Cohen's d), or odds ratios (from logistic regressions).  It can also make
+Bonferroni corrections to the confidence intervals for multiple comparisons.
 
 ## Syntax
 ```stata
