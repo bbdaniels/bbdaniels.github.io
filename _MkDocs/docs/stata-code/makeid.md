@@ -44,11 +44,12 @@ uniqueid        str4    %9s                   Demo ID: foreign + make
 
 `makeid` creates a unique ID for every observation in the dataset, based on strata-type variables.
 
-For example, given a variable list such as country state district name, a unique ID is returned for every observation with:
-1. Country fully unique
-2. State unique within country
-3. District unique within country and state
-4. Name unique within country, state, and district.
+For example, given a variable list such as _country state district name_, a unique ID is returned for every observation such that:
+
+1. Country code in the ID is fully unique
+2. State code in the ID is unique within country
+3. District code in the ID is unique within country and state
+4. Each name has a unique ID within country, state, and district.
 
 `makeid` prefixes each ID with the first letter of the project name, as a best practice to prevent against automatic conversion to numbers in Excel for example.
 
