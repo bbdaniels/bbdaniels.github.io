@@ -281,18 +281,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../flowchart/" title="Flow charts" class="md-nav__link">
-      Flow charts
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../forest/" title="Treatment effect graphs" class="md-nav__link">
       Treatment effect graphs
     </a>
@@ -363,13 +351,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example" title="Example" class="md-nav__link">
-    Example
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#acknowledgments" title="Acknowledgments" class="md-nav__link">
     Acknowledgments
   </a>
@@ -384,6 +365,18 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../statflow/" title="Flow charts" class="md-nav__link">
+      Flow charts
+    </a>
   </li>
 
         
@@ -444,13 +437,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example" title="Example" class="md-nav__link">
-    Example
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#acknowledgments" title="Acknowledgments" class="md-nav__link">
     Acknowledgments
   </a>
@@ -475,9 +461,35 @@
                 
                 
                 <h1 id="regression-tables">Regression tables</h1>
-<p><code>outwrite</code> reads multiple regressions saved with estimates store, consolidates them into a
+<p><code>outwrite</code> reads multiple regressions saved with <code>estimates store</code>, consolidates them into a
 single table, and exports the results to a .xlsx, .xls, .csv, or .tex file:</p>
-<p><img alt="Writing regression tables to common filetypes." src="/img/outwrite.png" /></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>  sysuse auto.dta, clear
+    reg price i.foreign##c.mpg
+    est sto reg1
+    reg price i.foreign##c.mpg##i.rep78
+    est sto reg2
+    estadd scalar h = 4
+    reg price i.rep78
+    est sto reg3
+    estadd scalar h = 2.5
+
+  outwrite reg1 reg2 reg3 using &quot;test.xlsx&quot; ///
+   , stats(N r2 h)  replace col(&quot;TEST&quot; &quot;(2)&quot;) drop(i.rep78) format(%9.3f)
+</pre></div>
+</td></tr></table>
+
+<p><img alt="Writing regression tables to common filetypes in Stata." src="/img/outwrite.png" /></p>
 <p>Alternatively, as a programming command, it will accept a single matrix and print that; it
 will also look for matrix_STARS and affix that number of stars to each cell.</p>
 <h2 id="syntax">Syntax</h2>
@@ -539,33 +551,6 @@ will also look for matrix_STARS and affix that number of stars to each cell.</p>
 </pre></div>
 </td></tr></table>
 
-<h2 id="example">Example</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>  sysuse auto.dta, clear
-    reg price i.foreign##c.mpg
-    est sto reg1
-    reg price i.foreign##c.mpg##i.rep78
-    est sto reg2
-    estadd scalar h = 4
-    reg price i.rep78
-    est sto reg3
-    estadd scalar h = 2.5
-
-  outwrite reg1 reg2 reg3 using &quot;test.xlsx&quot; ///
-   , stats(N r2 h)  replace col(&quot;TEST&quot; &quot;(2)&quot;) drop(i.rep78) format(%9.3f)
-</pre></div>
-</td></tr></table>
-
 <h2 id="acknowledgments">Acknowledgments</h2>
 <p>While the concept of <code>outwrite</code> is original, we borrowed core functionality from <code>xml_tab</code> by
 Zurab Sajaia and Michael Lokshin, and many ideas from such programs as <code>estout</code> by Ben Jann,
@@ -606,13 +591,13 @@ Zurab Sajaia and Michael Lokshin, and many ideas from such programs as <code>est
           </a>
         
         
-          <a href="../sumstats/" title="Summary statistics tables" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../statflow/" title="Flow charts" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Summary statistics tables
+                Flow charts
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

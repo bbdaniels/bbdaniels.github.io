@@ -281,18 +281,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../flowchart/" title="Flow charts" class="md-nav__link">
-      Flow charts
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../forest/" title="Treatment effect graphs" class="md-nav__link">
       Treatment effect graphs
     </a>
@@ -340,6 +328,18 @@
   <li class="md-nav__item">
     <a href="../outwrite/" title="Regression tables" class="md-nav__link">
       Regression tables
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../statflow/" title="Flow charts" class="md-nav__link">
+      Flow charts
     </a>
   </li>
 
@@ -480,11 +480,13 @@ uniqueid        str4    %9s                   Demo ID: foreign + make
 </td></tr></table>
 
 <p><code>makeid</code> creates a unique ID for every observation in the dataset, based on strata-type variables.</p>
-<p>For example, given a variable list such as country state district name, a unique ID is returned for every observation with:
-1. Country fully unique
-2. State unique within country
-3. District unique within country and state
-4. Name unique within country, state, and district.</p>
+<p>For example, given a variable list such as <em>country state district name</em>, a unique ID is returned for every observation such that:</p>
+<ol>
+<li>Country code in the ID is fully unique</li>
+<li>State code in the ID is unique within country</li>
+<li>District code in the ID is unique within country and state</li>
+<li>Each name has a unique ID within country, state, and district.</li>
+</ol>
 <p><code>makeid</code> prefixes each ID with the first letter of the project name, as a best practice to prevent against automatic conversion to numbers in Excel for example.</p>
 <p><code>makeid</code> is coming soon to <a href="https://ideas.repec.org/">SSC</a> and is open for development on <a href="https://github.com/bbdaniels/makeid">GitHub</a>. Submit bugs and feature requests <a href="https://github.com/bbdaniels/makeid/issues">here</a>. If you like <code>makeid</code>, be sure to visit my <a href="http://bbdaniels.github.io">homepage</a> and <a href="https://gist.github.com/bbdaniels/a3c9f9416f1d16d6f3c6e8cf371f1d89">Stata boilerplate code</a>.</p>
                 

@@ -279,27 +279,6 @@
           
           
 
-  
-
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="./" title="Flow charts" class="md-nav__link md-nav__link--active">
-      Flow charts
-    </a>
-    
-  </li>
-
-        
-          
-          
-          
-
 
   <li class="md-nav__item">
     <a href="../forest/" title="Treatment effect graphs" class="md-nav__link">
@@ -341,6 +320,27 @@
     <a href="../outwrite/" title="Regression tables" class="md-nav__link">
       Regression tables
     </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="Flow charts" class="md-nav__link md-nav__link--active">
+      Flow charts
+    </a>
+    
   </li>
 
         
@@ -402,13 +402,21 @@
                 
                 
                 <h1 id="flow-charts">Flow charts</h1>
-<p>Creating flow charts in Stata is now easy! Given an Excel spreadsheet with columns A, B, C, and D titled “logic”, “var”, “stat” and “value”, respectively, <code>flowchart</code> replaces the “value” column with the requested statistic for the observations in the dataset that fit the condition expressed in “logic”. This allows for the creation of dynamically updating custom tables and flowcharts. Here's an example:</p>
-<p><img alt="Making QR codes with Stata" src="/img/flowchart.png" /></p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>flowchart using <span class="s">&quot;flowchart.xlsx&quot;</span>
+<p>Creating flow charts in Stata is now easy! Given an Excel spreadsheet with columns A, B, C, and D titled “logic”, “var”, “stat” and “value”, respectively, <code>statflow</code> replaces the “value” column with the requested statistic for the observations in the dataset that fit the condition expressed in “logic”. This allows for the creation of dynamically updating custom tables and flowcharts. Here's an example:</p>
+<p><img alt="Making flowcharts with Stata" src="/img/flowchart.png" /></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>  <span class="c1">// Set up a flowchart:</span>
+    statflow template using <span class="s">&quot;/path/to/file.xlsx&quot;</span> , [replace]
+
+  <span class="c1">// Fill it out, then get all the requested statistics:</span>
+    statflow using <span class="s">&quot;/path/to/file.xlsx&quot;</span> [if] [in]
 </pre></div>
 </td></tr></table>
 
-<p><code>knapsack</code> is coming soon to <a href="https://ideas.repec.org/">SSC</a> and is open for development on <a href="https://github.com/bbdaniels/flowchart">GitHub</a>. Submit bugs and feature requests <a href="https://github.com/bbdaniels/flowchart/issues">here</a>. If you like <code>flowchart</code>, be sure to visit my <a href="http://bbdaniels.github.io">homepage</a> and <a href="https://gist.github.com/bbdaniels/a3c9f9416f1d16d6f3c6e8cf371f1d89">Stata boilerplate code</a>.</p>
+<p><code>statflow</code> is coming soon to <a href="https://ideas.repec.org/">SSC</a> and is open for development on <a href="https://github.com/bbdaniels/statflow">GitHub</a>. Submit bugs and feature requests <a href="https://github.com/bbdaniels/statflow/issues">here</a>. If you like <code>statflow</code>, be sure to visit my <a href="http://bbdaniels.github.io">homepage</a> and <a href="https://gist.github.com/bbdaniels/a3c9f9416f1d16d6f3c6e8cf371f1d89">Stata boilerplate code</a>.</p>
                 
                   
                 
@@ -429,7 +437,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../dta2kml/" title="KML files" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../outwrite/" title="Regression tables" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -438,19 +446,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                KML files
+                Regression tables
               </span>
             </div>
           </a>
         
         
-          <a href="../forest/" title="Treatment effect graphs" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../sumstats/" title="Summary statistics tables" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Treatment effect graphs
+                Summary statistics tables
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
