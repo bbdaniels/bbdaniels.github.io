@@ -62,4 +62,4 @@ While the concept of `outwrite` is original, we borrowed core functionality from
 Zurab Sajaia and Michael Lokshin, and many ideas from such programs as `estout` by Ben Jann,
 `outreg` by John Luke Gallup, `outreg2` by Roy Wada, `modltbl` by John H. Tyler, `mktab` by Nicholas Winter, `outtex` by Antoine Terracol, and `est2tex` by Marc Muendler.
 
-`outwrite` is coming soon to SSC and is open for development on [GitHub](https://github.com/bbdaniels/outwrite). Submit bugs and feature requests [here](https://github.com/bbdaniels/outwrite/issues). If you like `outwrite`, be sure to visit my [homepage](http://bbdaniels.github.io) and [Stata boilerplate code](https://gist.github.com/bbdaniels/a3c9f9416f1d16d6f3c6e8cf371f1d89).
+`outwrite` is available on [SSC](https://ideas.repec.org/c/boc/bocode/s458581.html) and is open for development on [GitHub](https://github.com/bbdaniels/outwrite). Submit bugs and feature requests [here](https://github.com/bbdaniels/outwrite/issues). If you like `outwrite`, be sure to visit my [homepage](http://bbdaniels.github.io) and [Stata boilerplate code](https://gist.github.com/bbdaniels/a3c9f9416f1d16d6f3c6e8cf371f1d89).

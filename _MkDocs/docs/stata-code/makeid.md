@@ -54,4 +54,4 @@ For example, given a variable list such as _country state district name_, a uniq
 `makeid` prefixes each ID with the first letter of the project name, as a best practice to prevent against automatic conversion to numbers in Excel for example.
 
 
-`makeid` is coming soon to [SSC](https://ideas.repec.org/) and is open for development on [GitHub](https://github.com/bbdaniels/makeid). Submit bugs and feature requests [here](https://github.com/bbdaniels/makeid/issues). If you like `makeid`, be sure to visit my [homepage](http://bbdaniels.github.io) and [Stata boilerplate code](https://gist.github.com/bbdaniels/a3c9f9416f1d16d6f3c6e8cf371f1d89).
+`makeid` is available on [SSC](https://ideas.repec.org/c/boc/bocode/s458590.html) and is open for development on [GitHub](https://github.com/bbdaniels/makeid). Submit bugs and feature requests [here](https://github.com/bbdaniels/makeid/issues). If you like `makeid`, be sure to visit my [homepage](http://bbdaniels.github.io) and [Stata boilerplate code](https://gist.github.com/bbdaniels/a3c9f9416f1d16d6f3c6e8cf371f1d89).
