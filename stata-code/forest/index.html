@@ -2,7 +2,7 @@
 
 
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="no-js">
   <head>
     
@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.6">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.2">
     
     
       
@@ -40,9 +40,9 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.451f80e5.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.30686662.css">
       
-        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.22915126.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -51,16 +51,20 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,400i,700|Fira+Mono">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,400i,700|Fira+Mono&display=fallback">
         <style>body,input{font-family:"Fira Sans","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono","Courier New",Courier,monospace}</style>
       
     
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
     
     
   </head>
@@ -100,22 +104,21 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                Benjamin Daniels
-              </span>
-              <span class="md-header-nav__topic">
+            <span class="md-header-nav__topic">
+              Benjamin Daniels
+            </span>
+            <span class="md-header-nav__topic">
+              
                 Treatment effect graphs
-              </span>
-            
+              
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -138,7 +141,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -151,7 +153,7 @@
         
       
       
-      <main class="md-main">
+      <main class="md-main" role="main">
         <div class="md-main__inner md-grid" data-md-component="container">
           
             
@@ -187,15 +189,27 @@
       
 
 
+  <li class="md-nav__item">
+    <a href="../../publications/" title="Publications" class="md-nav__link">
+      Publications
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
-    <label class="md-nav__link" for="nav-2">
+    <label class="md-nav__link" for="nav-3">
       Snippets
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-2">
+      <label class="md-nav__title" for="nav-3">
         Snippets
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -227,13 +241,13 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
-    <label class="md-nav__link" for="nav-3">
+    <label class="md-nav__link" for="nav-4">
       Stata code
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
+      <label class="md-nav__title" for="nav-4">
         Stata code
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -308,7 +322,7 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#syntax" title="Syntax" class="md-nav__link">
+  <a href="#syntax" class="md-nav__link">
     Syntax
   </a>
   
@@ -423,7 +437,7 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#syntax" title="Syntax" class="md-nav__link">
+  <a href="#syntax" class="md-nav__link">
     Syntax
   </a>
   
@@ -456,10 +470,10 @@
 5
 6
 7
-8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">global</span> tw_opts <span class="c1">///</span>
-    title(, justification(left) color(black) span pos(<span class="m">11</span>)) <span class="c1">///</span>
-    graphregion(color(white) lc(white) lw(med)) bgcolor(white) <span class="c1">///</span>
-    ylab(,angle(<span class="m">0</span>) nogrid) xtit(,placement(left) justification(left)) <span class="c1">///</span>
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">global</span> tw_opts <span class="cs">///</span>
+    title(, justification(left) color(black) span pos(<span class="m">11</span>)) <span class="cs">///</span>
+    graphregion(color(white) lc(white) lw(med)) bgcolor(white) <span class="cs">///</span>
+    ylab(,angle(<span class="m">0</span>) nogrid) xtit(,placement(left) justification(left)) <span class="cs">///</span>
     yscale(noline) xscale(noline) legend(region(lc(none) fc(none)))
 
 <span class="k">sysuse</span> auto<span class="m">.</span>dta ,<span class="k"> clear</span>
@@ -500,25 +514,25 @@ Bonferroni corrections to the confidence intervals for multiple comparisons.</p>
 16
 17
 18
-19</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    Syntax            Description
-    -------------------------------------------------------------------------------------
-      estimator       Indicates the estimation command to be utilized.
-      depvars         List the left-hand-side variables.
-      treatment       List the independent variable of interest.
+19</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="nv">Syntax</span>            <span class="nv">Description</span>
+    <span class="o">-------------------------------------------------------------------------------------</span>
+      <span class="nv">estimator</span>       <span class="nv">Indicates</span> <span class="nv">the</span> <span class="nv">estimation</span> <span class="nv">command</span> <span class="nv">to</span> <span class="nv">be</span> <span class="nv">utilized</span>.
+      <span class="nv">depvars</span>         <span class="nv">List</span> <span class="nv">the</span> <span class="nv">left</span><span class="o">-</span><span class="nv">hand</span><span class="o">-</span><span class="nv">side</span> <span class="nv">variables</span>.
+      <span class="nv">treatment</span>       <span class="nv">List</span> <span class="nv">the</span> <span class="nv">independent</span> <span class="nv">variable</span> <span class="nv">of</span> <span class="nv">interest</span>.
 
-      or|d            Request effect sizes as odds ratios (by exponentiating regression
-                        coefficients where possible) or in terms of Cohen&#39;s d (by
-                        standardizing the dependent variables). (Choose only one.)
-      bonferroni      Request confidence intervals calculated with Bonferroni correction
-                        for simultaneous comparisons.  This is calculated by adjusting
-                        the significance level to (100-5/(number of regressions)).
+      <span class="nv">or</span><span class="o">|</span><span class="nv">d</span>            <span class="nv">Request</span> <span class="nv">effect</span> <span class="nv">sizes</span> <span class="nv">as</span> <span class="nv">odds</span> <span class="nv">ratios</span> <span class="ss">(</span><span class="nv">by</span> <span class="nv">exponentiating</span> <span class="nv">regression</span>
+                        <span class="nv">coefficients</span> <span class="nv">where</span> <span class="nv">possible</span><span class="ss">)</span> <span class="nv">or</span> <span class="nv">in</span> <span class="nv">terms</span> <span class="nv">of</span> <span class="nv">Cohen</span><span class="s1">&#39;</span><span class="s">s d (by</span>
+                        <span class="nv">standardizing</span> <span class="nv">the</span> <span class="nv">dependent</span> <span class="nv">variables</span><span class="ss">)</span>. <span class="ss">(</span><span class="nv">Choose</span> <span class="nv">only</span> <span class="nv">one</span>.<span class="ss">)</span>
+      <span class="nv">bonferroni</span>      <span class="nv">Request</span> <span class="nv">confidence</span> <span class="nv">intervals</span> <span class="nv">calculated</span> <span class="nv">with</span> <span class="nv">Bonferroni</span> <span class="nv">correction</span>
+                        <span class="k">for</span> <span class="nv">simultaneous</span> <span class="nv">comparisons</span>.  <span class="nv">This</span> <span class="nv">is</span> <span class="nv">calculated</span> <span class="nv">by</span> <span class="nv">adjusting</span>
+                        <span class="nv">the</span> <span class="nv">significance</span> <span class="nv">level</span> <span class="nv">to</span> <span class="ss">(</span><span class="mi">100</span><span class="o">-</span><span class="mi">5</span><span class="o">/</span><span class="ss">(</span><span class="nv">number</span> <span class="nv">of</span> <span class="nv">regressions</span><span class="ss">))</span>.
 
-      weight()        Specify weights.
-      controls()      Specify controls.
-      graphopts()     Set any desired options for the graph.
+      <span class="nv">weight</span><span class="ss">()</span>        <span class="nv">Specify</span> <span class="nv">weights</span>.
+      <span class="nv">controls</span><span class="ss">()</span>      <span class="nv">Specify</span> <span class="nv">controls</span>.
+      <span class="nv">graphopts</span><span class="ss">()</span>     <span class="nv">Set</span> <span class="nv">any</span> <span class="nv">desired</span> <span class="nv">options</span> <span class="k">for</span> <span class="nv">the</span> <span class="nv">graph</span>.
 
-      est_options     Specify any options needed for the estimator.
-    -------------------------------------------------------------------------------------
+      <span class="nv">est_options</span>     <span class="nv">Specify</span> <span class="nv">any</span> <span class="nv">options</span> <span class="nv">needed</span> <span class="k">for</span> <span class="nv">the</span> <span class="nv">estimator</span>.
+    <span class="o">-------------------------------------------------------------------------------------</span>
 </pre></div>
 </td></tr></table>
 
@@ -586,20 +600,15 @@ Bonferroni corrections to the confidence intervals for multiple comparisons.</p>
           Material for MkDocs</a>
       </div>
       
-        
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../../assets/javascripts/application.5e60981f.js"></script>
+      <script src="../../assets/javascripts/application.c648116f.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
-      
-    
-    
       
     
   </body>
