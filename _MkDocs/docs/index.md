@@ -1,6 +1,6 @@
 # About Me
 
-<img src="/img/profile.jpg" alt="" style="width: 300px; float: left; margin-right: 20px;"/>
+<img src="/img/profile.jpeg" alt="" style="width: 300px; float: left; margin-right: 20px;"/>
 
 [Benjamin Daniels](https://scholar.google.com/citations?user=bExwzN4AAAAJ&hl=en) is a Research Fellow in the gui<sup>2</sup>de group at [Georgetown University](https://gui2de.georgetown.edu). Benjamin’s research focuses on the delivery of high-quality primary health care in developing contexts. His work on data from India, Kenya, South Africa, China, and other locations has highlighted the importance of direct measurement of health care provider knowledge, effort, and practice. He has supported some the largest research studies to date utilizing clinical vignettes, provider observation, and standardized patients. Benjamin is a member of the [QuTUB Project](https://www.qutubproject.org/) team.
 
