@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
     
     
       
@@ -40,7 +40,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.30686662.css">
       
         <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -51,12 +51,12 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,400i,700%7CFira+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,400i,700|Fira+Mono&display=fallback">
         <style>body,input{font-family:"Fira Sans","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono","Courier New",Courier,monospace}</style>
       
     
@@ -320,18 +320,54 @@
       
       
 
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Slides
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Slides
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../slides/stata-showcase/" title="Stata Showcase" class="md-nav__link">
+      Stata Showcase
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
   
 
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" checked>
     
-    <label class="md-nav__link" for="nav-7">
+    <label class="md-nav__link" for="nav-8">
       Stata code
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-7">
+      <label class="md-nav__title" for="nav-8">
         Stata code
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -538,13 +574,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
     
-    <label class="md-nav__link" for="nav-8">
+    <label class="md-nav__link" for="nav-9">
       Talks
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-8">
+      <label class="md-nav__title" for="nav-9">
         Talks
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -644,18 +680,18 @@ single table, and exports the results to a .xlsx, .xls, .csv, or .tex file:</p>
  9
 10
 11
-12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>  sysuse auto.dta, clear
-    reg price i.foreign##c.mpg
-    est sto reg1
-    reg price i.foreign##c.mpg##i.rep78
-    est sto reg2
-    estadd scalar h = 4
-    reg price i.rep78
-    est sto reg3
-    estadd scalar h = 2.5
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>  <span class="n">sysuse</span> <span class="n">auto</span><span class="p">.</span><span class="n">dta</span><span class="p">,</span> <span class="n">clear</span>
+    <span class="n">reg</span> <span class="n">price</span> <span class="n">i</span><span class="p">.</span><span class="k">foreign</span><span class="o">##</span><span class="k">c</span><span class="p">.</span><span class="n">mpg</span>
+    <span class="n">est</span> <span class="n">sto</span> <span class="n">reg1</span>
+    <span class="n">reg</span> <span class="n">price</span> <span class="n">i</span><span class="p">.</span><span class="k">foreign</span><span class="o">##</span><span class="k">c</span><span class="p">.</span><span class="n">mpg</span><span class="o">##</span><span class="n">i</span><span class="p">.</span><span class="n">rep78</span>
+    <span class="n">est</span> <span class="n">sto</span> <span class="n">reg2</span>
+    <span class="n">estadd</span> <span class="n">scalar</span> <span class="n">h</span> <span class="o">=</span> <span class="mi">4</span>
+    <span class="n">reg</span> <span class="n">price</span> <span class="n">i</span><span class="p">.</span><span class="n">rep78</span>
+    <span class="n">est</span> <span class="n">sto</span> <span class="n">reg3</span>
+    <span class="n">estadd</span> <span class="n">scalar</span> <span class="n">h</span> <span class="o">=</span> <span class="mi">2</span><span class="p">.</span><span class="mi">5</span>
 
-  outwrite reg1 reg2 reg3 using &quot;test.xlsx&quot; ///
-   , stats(N r2 h)  replace col(&quot;TEST&quot; &quot;(2)&quot;) drop(i.rep78) format(%9.3f)
+  <span class="n">outwrite</span> <span class="n">reg1</span> <span class="n">reg2</span> <span class="n">reg3</span> <span class="k">using</span> <span class="ss">&quot;test.xlsx&quot;</span> <span class="o">///</span>
+   <span class="p">,</span> <span class="n">stats</span><span class="p">(</span><span class="n">N</span> <span class="n">r2</span> <span class="n">h</span><span class="p">)</span>  <span class="k">replace</span> <span class="n">col</span><span class="p">(</span><span class="ss">&quot;TEST&quot;</span> <span class="ss">&quot;(2)&quot;</span><span class="p">)</span> <span class="k">drop</span><span class="p">(</span><span class="n">i</span><span class="p">.</span><span class="n">rep78</span><span class="p">)</span> <span class="n">format</span><span class="p">(</span><span class="o">%</span><span class="mi">9</span><span class="p">.</span><span class="mi">3</span><span class="n">f</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
 
@@ -691,13 +727,13 @@ will also look for matrix_STARS and affix that number of stars to each cell.</p>
 26
 27
 28</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>  outwrite estimates_1 estimates_2 [...]
-    using /path/to/output.[xlsx|xls|csv|tex] ,
+    using <span class="o">/</span>path<span class="o">/</span>to<span class="o">/</span>output.[xlsx|xls|csv|tex] ,
     [replace stats()<span class="k"> drop</span>(varlist)]
     [tstat|pvalue] [format(format)]
     [sheet(sheetname [,replace]) modify]
     [rownames(<span class="s">&quot;list&quot;</span> <span class="s">&quot;of&quot;</span> <span class="s">&quot;names&quot;</span>) colnames(<span class="s">&quot;list&quot;</span> <span class="s">&quot;of&quot;</span> <span class="s">&quot;names&quot;</span>)]
 
-  ------------------------------------------------------------------------------------------
+  <span class="o">------------------------------------------------------------------------------------------</span>
     Options
 
 <span class="k">      replace</span>         Allows outwrite to overwrite the output<span class="k"> file</span>.
@@ -705,9 +741,9 @@ will also look for matrix_STARS and affix that number of stars to each cell.</p>
                         or scalars added<span class="k"> by</span> estadd.
 <span class="k">      drop</span>(varlist)   Suppresses reporting of all variables<span class="k"> in in varlist</span> from the output.
                         This can be a<span class="k"> factor</span> variable<span class="k"> list</span>.
-      tstat|pvalue    Reports T-statistics or P-values<span class="k"> in</span> regression<span class="k"> table</span>, instead of the
+      tstat|pvalue    Reports T<span class="o">-</span>statistics or P<span class="o">-</span>values<span class="k"> in</span> regression<span class="k"> table</span>, instead of the
                         default standard errors.
-<span class="k">      format</span>(format)  Format the<span class="k"> table</span> values. By default this is %<span class="m">9.</span>2f.
+<span class="k">      format</span>(format)  Format the<span class="k"> table</span> values. By default this is <span class="nx">%9.2f</span>.
       sheet()         Place results<span class="k"> in</span> a target sheet<span class="k"> if</span> using .xlsx<span class="k"> format</span>.
       modify          Allows outwrite to modify the output<span class="k"> file</span>. Often required with
                         sheet() to work<span class="k"> as</span> expected.
@@ -715,7 +751,7 @@ will also look for matrix_STARS and affix that number of stars to each cell.</p>
                         reflect the variables<span class="k"> in</span> the estimation command.
       colnames()      Manually renames columns of output. By default, the columns are
                         named to reflect the saved equation names.
-    --------------------------------------------------------------------------------------
+    <span class="o">--------------------------------------------------------------------------------------</span>
     Note:<span class="k"> if</span> used to export a<span class="k"> matrix</span>, stats(),<span class="k"> drop</span>(), and tstat|pvalue will not be
     accepted.
 </pre></div>
@@ -728,7 +764,6 @@ Zurab Sajaia and Michael Lokshin, and many ideas from such programs as <code>est
 <p><code>outwrite</code> is available on <a href="https://ideas.repec.org/c/boc/bocode/s458581.html">SSC</a> and is open for development on <a href="https://github.com/bbdaniels/outwrite">GitHub</a>. Submit bugs and feature requests <a href="https://github.com/bbdaniels/outwrite/issues">here</a>. If you like <code>outwrite</code>, be sure to visit my <a href="http://bbdaniels.github.io">homepage</a> and <a href="https://gist.github.com/bbdaniels/a3c9f9416f1d16d6f3c6e8cf371f1d89">Stata boilerplate code</a>.</p>
                 
                   
-                
                 
               
               
@@ -796,7 +831,7 @@ Zurab Sajaia and Michael Lokshin, and many ideas from such programs as <code>est
       
     </div>
     
-      <script src="../../assets/javascripts/application.808e90bb.js"></script>
+      <script src="../../assets/javascripts/application.ac79c3b0.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
