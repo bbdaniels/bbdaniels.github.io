@@ -1,13 +1,13 @@
-# Data for Development Impact (Book)
+# Development Research in Practice (Book)
 
 <!DOCTYPE HTML PUBLIC “-//W3C//DTD HTML 4.0 Transitional//EN”>
 <html>
 <head>
-<title>Data for Development Impact</title>
-<meta http-equiv="refresh" content="0;url=https://worldbank.github.com/d4di">
+<title>Development Research in Practice</title>
+<meta http-equiv="refresh" content="0;url=https://worldbank.github.com/dime-data-handbook">
 
 </head>
 <body>
-<p>Redirecting you to the <a href="https://worldbank.github.com/d4di">Data for Development Impact</a> homepage....</p>
+<p>Redirecting you to the <a href="https://worldbank.github.com/dime-data-handbook">Development Research in Practice</a> homepage....</p>
 </body>
 </html>

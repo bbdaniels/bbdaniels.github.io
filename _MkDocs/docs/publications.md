@@ -1,7 +1,8 @@
 # Publications
 
 - `iefieldkit`: Stata commands for primary data collection and cleaning.” (The Stata Journal (forthcoming))
-- Antibiotic prescription practices in primary care in low- and middle-income countries: a systematic review and meta-analysis. (PLOS Medicine (forthcoming))
+- Two Indias: The structure of primary health care markets in rural Indian villages with implications for policy. ([Social Science & Medicine](https://doi.org/10.1016/j.socscimed.2020.112799) | [OSF](https://osf.io/3usjc/))
+- Antibiotic prescription practices in primary care in low- and middle-income countries: a systematic review and meta-analysis. ([PLOS Medicine](https://journals.plos.org/plosmedicine/article?id=10.1371%2Fjournal.pmed.1003139))
 - Human Capital Accumulation and Disasters: Evidence from the Pakistan Earthquake of 2005 ([Working Paper](https://assets.publishing.service.gov.uk/media/5ed0d6f486650c76b2fe74f6/RISE_WP-039_Adrabi_Daniels_Das_0.pdf) | [OSF](https://osf.io/3qg98/))
 - Covid-19 Diaries: Early Impressions from an Online Questionnaire ([American Ethnologist](https://americanethnologist.org/features/collections/covid-19-and-student-focused-concerns-threats-and-possibilities/covid-19-diaries-early-impressions-from-an-online-questionnaire) | [OSF](https://osf.io/ry3km/))
 - Use of standardised patients for healthcare quality research in low-and middle-income countries ([BMJ Global Health](https://gh.bmj.com/content/4/5/e001669) | [GitHub](https://github.com/qutubproject/bmjgh2019))
