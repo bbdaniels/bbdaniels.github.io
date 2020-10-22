@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
     
     
       
@@ -40,7 +40,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.30686662.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
       
         <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -51,12 +51,12 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,400i,700|Fira+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,400i,700%7CFira+Mono&display=fallback">
         <style>body,input{font-family:"Fira Sans","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono","Courier New",Courier,monospace}</style>
       
     
@@ -641,6 +641,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../talks/spatial-stata/" title="Spatial Data and Maps in Stata" class="md-nav__link">
+      Spatial Data and Maps in Stata
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -718,17 +730,17 @@
  8
  9
 10
-11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">.</span> <span class="n">ssc</span> <span class="n">install</span> <span class="n">crossfold</span>
-<span class="p">.</span> <span class="n">sysuse</span> <span class="n">nlsw88</span> <span class="p">,</span> <span class="n">clear</span>
-<span class="p">.</span> <span class="n">crossfold</span> <span class="n">reg</span> <span class="n">wage</span> <span class="k">union</span>
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>. ssc install crossfold
+. sysuse nlsw88 , clear
+. crossfold reg wage union
 
-             <span class="o">|</span>      <span class="n">RMSE</span>
-<span class="c1">-------------+-----------</span>
-        <span class="n">est1</span> <span class="o">|</span>  <span class="mi">4</span><span class="p">.</span><span class="mi">171849</span>
-        <span class="n">est2</span> <span class="o">|</span>  <span class="mi">4</span><span class="p">.</span><span class="mi">105884</span>
-        <span class="n">est3</span> <span class="o">|</span>  <span class="mi">4</span><span class="p">.</span><span class="mi">038483</span>
-        <span class="n">est4</span> <span class="o">|</span>  <span class="mi">4</span><span class="p">.</span><span class="mi">151482</span>
-        <span class="n">est5</span> <span class="o">|</span>  <span class="mi">4</span><span class="p">.</span><span class="mi">171727</span>
+             |      RMSE
+-------------+-----------
+        est1 |  4.171849
+        est2 |  4.105884
+        est3 |  4.038483
+        est4 |  4.151482
+        est5 |  4.171727
 </pre></div>
 </td></tr></table>
 
@@ -759,24 +771,25 @@ predict the dependent variable in the unused group.</p>
  9
 10
 11
-12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nv">Options</span>               <span class="nv">Description</span>
-<span class="o">----------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span>
-<span class="nv">eif</span><span class="c1">; ein              Error evaluation if and in specifications place restrictions on the out-of-sample set that should be fit. Modelling if and in restrictions should be</span>
-                        <span class="nv">specified</span> <span class="nv">with</span> <span class="nv">the</span> <span class="nv">model</span>.
-<span class="nv">eweight</span>               <span class="nv">Weighting</span> <span class="k">for</span> <span class="nv">error</span> <span class="nv">evaluation</span> <span class="nv">purposes</span>. <span class="nv">Model</span> <span class="nv">weights</span>, <span class="nv">identical</span> <span class="nv">or</span> <span class="nv">not</span>, <span class="nv">should</span> <span class="nv">be</span> <span class="nv">specified</span> <span class="nv">after</span> <span class="nv">the</span> <span class="nv">model</span>.
-<span class="nv">stub</span><span class="ss">()</span>                <span class="nv">Specifies</span> <span class="nv">a</span> <span class="nv">stub</span> <span class="nv">name</span> <span class="k">for</span> <span class="nv">naming</span> <span class="nv">estimation</span> <span class="nv">results</span> <span class="nv">and</span> <span class="k">for</span> <span class="nv">the</span> <span class="nv">results</span> <span class="nv">matrix</span>. <span class="nv">The</span> <span class="nv">default</span> <span class="nv">is</span> <span class="nv">est</span>.
-<span class="nv">k</span><span class="ss">()</span>                   <span class="nv">Specifies</span> <span class="nv">a</span> <span class="nv">number</span> <span class="nv">of</span> <span class="nv">folds</span> <span class="nv">to</span> <span class="nv">carry</span> <span class="nv">out</span>. <span class="nv">The</span> <span class="nv">default</span> <span class="nv">is</span> <span class="mi">5</span>, <span class="nv">and</span> <span class="nv">k</span> <span class="nv">cannot</span> <span class="nv">exceed</span> <span class="mi">300</span> <span class="nv">or</span> <span class="nv">the</span> <span class="nv">number</span> <span class="nv">of</span> <span class="nv">observations</span>.
-<span class="nv">loud</span>                  <span class="nv">Displays</span> <span class="nv">each</span> <span class="nv">model</span> <span class="nv">as</span> <span class="nv">it</span> <span class="nv">is</span> <span class="nv">fit</span>.
-<span class="nv">mae</span>                   <span class="nv">Calculates</span> <span class="nv">mean</span> <span class="nv">absolute</span> <span class="nv">errors</span> <span class="ss">(</span><span class="nv">MAE</span><span class="ss">)</span> <span class="nv">instead</span> <span class="nv">of</span> <span class="nv">RMSE</span>.
-<span class="nv">r2</span>                    <span class="nv">Calculates</span> <span class="nv">psuedo</span><span class="o">-</span><span class="nv">R</span><span class="o">-</span><span class="nv">squared</span> <span class="ss">(</span><span class="nv">the</span> <span class="nv">square</span> <span class="nv">of</span> <span class="nv">the</span> <span class="nv">correlation</span> <span class="nv">coefficient</span> <span class="nv">of</span> <span class="nv">the</span> <span class="nv">predicted</span> <span class="nv">and</span> <span class="nv">actual</span> <span class="nv">values</span> <span class="nv">of</span> <span class="nv">the</span> <span class="nv">dependent</span> <span class="nv">variable</span><span class="ss">)</span> <span class="nv">instead</span> <span class="nv">of</span> <span class="nv">RMSE</span>.
-<span class="nv">model_options</span>         <span class="nv">Modelling</span> <span class="nv">command</span> <span class="nv">options</span> <span class="ss">(</span><span class="nv">such</span> <span class="nv">as</span> <span class="nv">fe</span> <span class="k">for</span> <span class="nv">xtreg</span><span class="ss">)</span>.
-<span class="o">----------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span>
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>Options               Description
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+eif; ein              Error evaluation if and in specifications place restrictions on the out-of-sample set that should be fit. Modelling if and in restrictions should be
+                        specified with the model.
+eweight               Weighting for error evaluation purposes. Model weights, identical or not, should be specified after the model.
+stub()                Specifies a stub name for naming estimation results and for the results matrix. The default is est.
+k()                   Specifies a number of folds to carry out. The default is 5, and k cannot exceed 300 or the number of observations.
+loud                  Displays each model as it is fit.
+mae                   Calculates mean absolute errors (MAE) instead of RMSE.
+r2                    Calculates psuedo-R-squared (the square of the correlation coefficient of the predicted and actual values of the dependent variable) instead of RMSE.
+model_options         Modelling command options (such as fe for xtreg).
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 </pre></div>
 </td></tr></table>
 
 <p><code>crossfold</code> is available on <a href="https://ideas.repec.org/c/boc/bocode/s457426.html">SSC</a> and is open for development on <a href="https://github.com/bbdaniels/crossfold">GitHub</a>. Submit bugs and feature requests <a href="https://github.com/bbdaniels/crossfold/issues">here</a>. If you like <code>crossfold</code>, be sure to visit my <a href="http://bbdaniels.github.io">homepage</a> and <a href="https://gist.github.com/bbdaniels/a3c9f9416f1d16d6f3c6e8cf371f1d89">Stata boilerplate code</a>.</p>
                 
                   
+                
                 
               
               
@@ -844,7 +857,7 @@ predict the dependent variable in the unused group.</p>
       
     </div>
     
-      <script src="../../assets/javascripts/application.ac79c3b0.js"></script>
+      <script src="../../assets/javascripts/application.808e90bb.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
