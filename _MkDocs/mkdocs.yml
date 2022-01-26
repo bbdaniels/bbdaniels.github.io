@@ -1,15 +1,3 @@
-site_name: Benjamin Daniels
+site_name: Benjamin B. Daniels
 theme:
     name: material
-    palette:
-        primary: 'teal'
-        accent: 'teal'
-    logo:
-        icon: memory
-    font:
-        text: 'Fira Sans'
-        code: 'Fira Mono'
-
-markdown_extensions:
-  - codehilite:
-      linenums: true
