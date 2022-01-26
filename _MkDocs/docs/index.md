@@ -16,7 +16,7 @@ provider observation, and standardized patients. Benjamin is a member of
 the [QuTUB Project](https://www.qutubproject.org/) team. 
 
 Benjamin also works with [DIME
-Analytics](http://www.worldbank.org/en/research/dime/DIME-Analytics) to
+Analytics](https://www.worldbank.org/en/research/dime/data-and-analytics) to
 improve the reproducibility, transparency, and credibility of
 development research. This work comprises code and process development,
 research personnel training, and direct support for data analysis and
@@ -28,7 +28,6 @@ Research in Practice](http://worldbank.github.io/dime-data-handbook/)
 data handbook. 
 
 Benjamin's academic work can be found on [Google
-Scholar](https://scholar.google.com/citations?user=bExwzN4AAAAJ&hl=en)
-or on the [publications](https://www.benjaminbdaniels.com/publications/)
-page. His Stata code can be found on SSC, on
-[GitHub](https://github.com/bbdaniels/), or on the sidebar links. 
+Scholar](https://scholar.google.com/citations?user=bExwzN4AAAAJ&hl=en).
+His Stata code can be found on SSC, on
+[GitHub](https://github.com/bbdaniels/), or on the sidebar links.  
