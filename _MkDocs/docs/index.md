@@ -24,8 +24,9 @@ survey development. These tools include software products like
 [`iefieldkit`](http://worldbank.github.io/ietoolkit/) and
 [`ietoolkit`](http://worldbank.github.io/ietoolkit/), research resources
 like the [DIME Wiki](http://dimewiki.worldbank.org) and the [Development
-Research in Practice](http://worldbank.github.io/dime-data-handbook/)
-data handbook. 
+Research in
+Practice](https://openknowledge.worldbank.org/handle/10986/35594) data
+handbook.  
 
 Benjamin's academic work can be found on [Google
 Scholar](https://scholar.google.com/citations?user=bExwzN4AAAAJ&hl=en).
